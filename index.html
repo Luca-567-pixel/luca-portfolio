@@ -1,119 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
-<title>LUCA — Personal Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020611">
+<title>LUCA // PERSONAL HQ</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg1:#07111f;--bg2:#102d62;--cyan:#61e7ff;--blue:#3f7cff;
-  --glass:rgba(255,255,255,.095);--line:rgba(255,255,255,.16);
-  --text:#f5f8ff;--muted:#aebbd2;
-}
-body{
-  min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;
-  overflow-x:hidden;background:
-    radial-gradient(circle at 18% 20%,rgba(61,139,255,.35),transparent 30%),
-    radial-gradient(circle at 85% 75%,rgba(0,231,255,.18),transparent 30%),
-    linear-gradient(135deg,var(--bg1),var(--bg2) 55%,#06101e);
-}
-body:before,body:after{content:"";position:fixed;inset:auto;z-index:-1;filter:blur(80px);border-radius:50%;pointer-events:none}
-body:before{width:260px;height:260px;left:-80px;top:35%;background:rgba(51,111,255,.3)}
-body:after{width:300px;height:300px;right:-110px;top:10%;background:rgba(0,217,255,.17)}
-.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.wrap{width:min(1000px,92%);margin:auto;padding:34px 0 55px}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:45px}
-.logo{font-weight:800;letter-spacing:.12em;font-size:14px}
-.status{font-size:11px;color:#bfeeff;border:1px solid rgba(97,231,255,.28);background:rgba(97,231,255,.08);padding:8px 12px;border-radius:999px;backdrop-filter:blur(12px)}
-.hero{text-align:center;position:relative;padding:22px 0 18px}
-.character{
-  width:180px;height:180px;margin:0 auto 22px;position:relative;
-  filter:drop-shadow(0 24px 45px rgba(0,0,0,.45));
-  animation:float 4s ease-in-out infinite;
-}
-.head{position:absolute;width:76px;height:82px;border-radius:45% 45% 48% 48%;left:52px;top:34px;background:linear-gradient(145deg,#c78d70,#80513e);border:3px solid rgba(255,255,255,.12)}
-.hair{position:absolute;left:42px;top:18px;width:95px;height:52px;background:#111722;border-radius:50% 55% 35% 40%;transform:rotate(-3deg)}
-.hair:after{content:"";position:absolute;left:42px;top:-5px;width:17px;height:64px;background:#0c111a;transform:rotate(22deg);border-radius:90% 15% 80% 20%}
-.hair:before{content:"";position:absolute;left:23px;top:5px;width:15px;height:61px;background:#101622;transform:rotate(-16deg);border-radius:90% 20% 80% 20%}
-.eye{position:absolute;top:68px;width:7px;height:4px;border-radius:5px;background:#171717}.e1{left:71px}.e2{left:100px}
-.body{position:absolute;left:31px;top:99px;width:119px;height:68px;border-radius:28px 28px 12px 12px;background:linear-gradient(135deg,#68cfff,#1b58c8 58%,#102d73);border:2px solid rgba(255,255,255,.14)}
-.stripe{position:absolute;left:55px;top:103px;width:9px;height:58px;background:rgba(255,255,255,.75);transform:rotate(16deg);opacity:.45}
-.arm{position:absolute;width:28px;height:65px;top:101px;border-radius:20px;background:#b87960}.a1{left:22px;transform:rotate(16deg)}.a2{right:22px;transform:rotate(-16deg)}
-.title{font-size:clamp(42px,9vw,76px);line-height:.95;font-weight:800;letter-spacing:-.055em}
-.title span{background:linear-gradient(90deg,#fff,#75eaff,#77a4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin:18px auto 0;max-width:620px;color:var(--muted);line-height:1.7;font-size:14px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:38px 0 20px}
-.card{
-  position:relative;min-height:185px;padding:24px;border:1px solid var(--line);
-  border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.045));
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  box-shadow:inset 0 1px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.18);
-  color:white;text-decoration:none;overflow:hidden;transition:.28s transform,.28s border-color,.28s box-shadow;
-}
-.card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.34);box-shadow:0 25px 65px rgba(0,0,0,.28)}
-.card:after{content:"";position:absolute;width:100px;height:100px;right:-35px;top:-40px;background:rgba(255,255,255,.1);filter:blur(4px);border-radius:50%}
-.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:22px;margin-bottom:22px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.13)}
-.tiktok{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(93,232,255,.06))}
-.tiktok .icon{box-shadow:0 0 30px rgba(97,231,255,.15)}
-.card h2{font-size:17px;margin-bottom:7px}.card p{font-size:12px;color:#aebbd2}.go{position:absolute;right:22px;bottom:22px;color:#bfefff}
-.note{text-align:center;color:#8797b3;font-size:11px;margin-top:28px}
-.footer{margin-top:38px;text-align:center;color:#7585a0;font-size:11px;letter-spacing:.08em}
-@keyframes float{50%{transform:translateY(-10px)}}
-@media(max-width:700px){.cards{grid-template-columns:1fr}.card{min-height:145px}.wrap{padding-top:24px}.hero{padding-top:5px}}
-.ripple{position:fixed;width:10px;height:10px;border-radius:50%;background:rgba(150,240,255,.55);pointer-events:none;transform:translate(-50%,-50%);animation:ripple .55s ease-out forwards}
-@keyframes ripple{to{width:260px;height:260px;opacity:0}}
+:root{--cyan:#69ecff;--blue:#4388ff;--deep:#020611;--muted:#8c9ab2;--line:rgba(140,220,255,.18)}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:var(--deep);color:#f5fbff;font-family:Inter,sans-serif;overflow-x:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:-5}
+body:before{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;background:
+radial-gradient(circle at 74% 20%,rgba(37,117,255,.23),transparent 30%),
+radial-gradient(circle at 20% 70%,rgba(0,226,255,.13),transparent 28%),
+linear-gradient(130deg,#01030a,#071632 55%,#020611)}
+body:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.06;background-image:linear-gradient(rgba(255,255,255,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.55) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.wrap{width:min(1160px,92%);margin:auto}
+header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Orbitron;font-weight:800;letter-spacing:.16em;font-size:14px}.logo b{color:var(--cyan)}
+nav{display:flex;gap:26px}nav a{color:#91a0b8;text-decoration:none;font-size:10px;letter-spacing:.13em}nav a:hover{color:#fff}
+.online{font:600 9px Orbitron;letter-spacing:.1em;border:1px solid rgba(105,236,255,.28);padding:8px 11px;border-radius:4px;background:rgba(105,236,255,.06)}.online i{display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 13px var(--cyan);margin-right:7px}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1.05fr;gap:10px;align-items:center}
+.kicker{font:600 10px Orbitron;letter-spacing:.28em;color:var(--cyan);margin-bottom:20px}
+h1{font:800 clamp(44px,6.2vw,82px)/.96 Orbitron;letter-spacing:-.05em}h1 span{display:block;background:linear-gradient(90deg,#fff,#9ceeff 45%,#4b82ff);color:transparent;background-clip:text;-webkit-background-clip:text}
+.lead{max-width:520px;color:var(--muted);font-size:14px;line-height:1.85;margin:22px 0 28px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{color:#fff;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.045);padding:13px 16px;border-radius:5px;font-size:10px;letter-spacing:.13em;transition:.25s;backdrop-filter:blur(12px)}.btn.primary{background:linear-gradient(100deg,#2766dc,#21a6d0);border-color:#72eaff;box-shadow:0 0 35px rgba(55,153,255,.23)}.btn:hover{transform:translateY(-4px);filter:brightness(1.12)}
+.stage{height:510px;position:relative;display:grid;place-items:center}
+.ring,.ring2{position:absolute;border-radius:50%;border:1px solid rgba(105,236,255,.17);box-shadow:0 0 80px rgba(45,120,255,.12),inset 0 0 60px rgba(45,120,255,.08)}.ring{width:410px;height:410px;animation:spin 22s linear infinite}.ring2{width:300px;height:300px;border-style:dashed;animation:spin 15s linear infinite reverse}.ring:before,.ring:after{content:"";position:absolute;inset:25px;border-radius:50%;border:1px dashed rgba(126,181,255,.12)}.ring:after{inset:78px;border-style:solid}
+.ringlabel{position:absolute;font:8px Orbitron;letter-spacing:.15em;color:#6f91b8}.rl1{top:20px;left:20px}.rl2{right:18px;bottom:38px}
+.scan{position:absolute;width:420px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.55;animation:scan 4s ease-in-out infinite}
+.char{position:relative;width:330px;height:470px;z-index:2;display:grid;place-items:center;filter:drop-shadow(0 28px 35px rgba(0,0,0,.75))}
+.char img{width:260px;height:auto;max-height:460px;object-fit:contain;image-rendering:auto;filter:saturate(1.06) contrast(1.04)}
+.energy{position:absolute;width:275px;height:275px;border-radius:50%;background:radial-gradient(circle,rgba(65,185,255,.17),transparent 67%);filter:blur(8px);animation:pulse 2.7s ease-in-out infinite}
+.section{padding:46px 0}.head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}.head h2{font:700 20px Orbitron;letter-spacing:.08em}.head small{color:#65758e;font-size:9px;letter-spacing:.14em}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{position:relative;min-height:220px;text-decoration:none;color:#fff;padding:23px;border:1px solid var(--line);border-radius:7px;background:linear-gradient(145deg,rgba(18,34,58,.72),rgba(4,10,19,.78));overflow:hidden;backdrop-filter:blur(18px);transition:.3s}
+.card:before{content:"";position:absolute;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:translateX(-100%);transition:.55s}.card:hover:before{transform:translateX(100%)}.card:hover{transform:translateY(-8px);border-color:rgba(105,236,255,.42);box-shadow:0 25px 70px rgba(0,0,0,.36)}
+.icon{width:50px;height:50px;display:grid;place-items:center;border-radius:7px;border:1px solid var(--line);background:rgba(255,255,255,.055);font-size:23px;margin-bottom:25px}.card h3{font-size:16px;margin-bottom:8px}.card p{font-size:11px;color:#8391a8}.arrow{position:absolute;right:20px;bottom:18px;color:var(--cyan)}
+.tiktok{background:linear-gradient(145deg,rgba(67,107,160,.28),rgba(3,11,22,.84));box-shadow:inset 0 0 45px rgba(91,222,255,.05)}
+.stats{margin-top:15px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:rgba(255,255,255,.025)}.stat{text-align:center;padding:20px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{font:700 17px Orbitron}.stat small{display:block;color:#62718a;font-size:9px;letter-spacing:.12em;margin-top:7px}
+footer{border-top:1px solid var(--line);padding:35px 0 50px;display:flex;justify-content:space-between;color:#58677f;font-size:9px;letter-spacing:.12em}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,25px);opacity:0;pointer-events:none;background:rgba(3,10,20,.9);border:1px solid rgba(105,236,255,.3);padding:11px 15px;border-radius:5px;font:9px Orbitron;letter-spacing:.12em;backdrop-filter:blur(14px);transition:.25s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes scan{0%,100%{transform:translateY(-130px);opacity:0}45%,60%{opacity:.65}50%{transform:translateY(130px)}}@keyframes pulse{50%{transform:scale(1.13);opacity:.65}}
+@media(max-width:780px){header{height:68px}.nav{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:65px 0 30px;text-align:center}.lead{margin-left:auto;margin-right:auto}.buttons{justify-content:center}.stage{order:-1;height:405px}.ring{width:300px;height:300px}.ring2{width:220px;height:220px}.char{height:390px}.char img{width:220px}.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.head{display:block}.head small{display:block;margin-top:8px}footer{display:block;text-align:center;line-height:2.2}}
 </style>
 </head>
 <body>
-<div class="noise"></div>
+<canvas id="fx"></canvas>
 <div class="wrap">
-  <nav><div class="logo">LUCA / PORTFOLIO</div><div class="status">● ONLINE</div></nav>
-  <main>
-    <section class="hero">
-      <div class="character" aria-label="blue battle royale character">
-        <div class="hair"></div><div class="head"></div><div class="eye e1"></div><div class="eye e2"></div>
-        <div class="body"></div><div class="stripe"></div><div class="arm a1"></div><div class="arm a2"></div>
-      </div>
-      <h1 class="title">HEY, I'M <span>LUCA.</span></h1>
-      <p class="sub">Welcome to my personal space. Gaming, content, communities and everything I’m building online — all in one place.</p>
-    </section>
+<header><div class="logo">LUCA <b>//</b> HQ</div><nav><a href="#social">SOCIAL</a><a href="#status">STATUS</a><a href="#contact">CONTACT</a></nav><div class="online"><i></i>ONLINE</div></header>
 
-    <section class="cards">
-      <a class="card tiktok" href="https://www.tiktok.com/@l.u.c.a1421" target="_blank" rel="noopener">
-        <div class="icon">♪</div><h2>TikTok</h2><p>@l.u.c.a1421</p><span class="go">↗</span>
-      </a>
-      <a class="card" href="https://t.me/Dadluca567" target="_blank" rel="noopener">
-        <div class="icon">✈</div><h2>Telegram</h2><p>@Dadluca567</p><span class="go">↗</span>
-      </a>
-      <a class="card" href="https://t.me/premiumrobloxnews" target="_blank" rel="noopener">
-        <div class="icon">◈</div><h2>Telegram Channel</h2><p>Premium Roblox News</p><span class="go">↗</span>
-      </a>
-    </section>
-    <div class="note">Tap any card — sound feedback is enabled.</div>
-  </main>
-  <div class="footer">LUCA • PERSONAL PORTFOLIO</div>
+<section class="hero">
+<div>
+<div class="kicker">PLAYER PROFILE / 001</div>
+<h1>WELCOME TO<span>LUCA'S HQ.</span></h1>
+<p class="lead">A high-end personal hub for gaming, content and community. Tap into the network and connect with me across my main platforms.</p>
+<div class="buttons"><a class="btn primary click" href="#social">ENTER HQ ↓</a><a class="btn click" href="https://t.me/Dadluca567" target="_blank" rel="noopener">CONTACT ↗</a></div>
 </div>
+<div class="stage">
+<div class="ring"></div><div class="ring2"></div><div class="scan"></div><div class="energy"></div>
+<div class="ringlabel rl1">SYSTEM // ACTIVE</div><div class="ringlabel rl2">BLUE LOADOUT // READY</div>
+<div class="char"><img src="character.png" alt="Blue-set PUBG character reference"></div>
+</div>
+</section>
+
+<section class="section" id="social">
+<div class="head"><h2>CONNECT / SOCIAL</h2><small>SELECT A CHANNEL TO OPEN</small></div>
+<div class="cards">
+<a class="card tiktok click" href="https://www.tiktok.com/@l.u.c.a1421" target="_blank" rel="noopener"><div class="icon">♪</div><h3>TIKTOK</h3><p>@l.u.c.a1421</p><span class="arrow">↗</span></a>
+<a class="card click" href="https://t.me/Dadluca567" target="_blank" rel="noopener"><div class="icon">✈</div><h3>TELEGRAM</h3><p>@Dadluca567</p><span class="arrow">↗</span></a>
+<a class="card click" href="https://t.me/premiumrobloxnews" target="_blank" rel="noopener"><div class="icon">◈</div><h3>TELEGRAM CHANNEL</h3><p>PREMIUM ROBLOX NEWS</p><span class="arrow">↗</span></a>
+</div>
+<div class="stats" id="status"><div class="stat"><strong>03</strong><small>ACTIVE LINKS</small></div><div class="stat"><strong>24/7</strong><small>HQ STATUS</small></div><div class="stat"><strong>V2</strong><small>BUILD</small></div></div>
+</section>
+
+<footer id="contact"><span>LUCA // PERSONAL HQ</span><span>PC / HIGH-END EDIT • 2026</span></footer>
+</div>
+<div class="toast" id="toast">SYSTEM // LINK OPENING</div>
 <script>
-function clickSound(){
-  const C=window.AudioContext||window.webkitAudioContext;
-  if(!C)return;
-  const ctx=new C(),o=ctx.createOscillator(),g=ctx.createGain();
-  o.type="sine";o.frequency.setValueAtTime(520,ctx.currentTime);
-  o.frequency.exponentialRampToValueAtTime(760,ctx.currentTime+.08);
-  g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.055,ctx.currentTime+.01);
-  g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.12);
-  o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.13);
-}
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("click",e=>{
-    clickSound();
-    const r=document.createElement("span");r.className="ripple";r.style.left=e.clientX+"px";r.style.top=e.clientY+"px";document.body.appendChild(r);
-    setTimeout(()=>r.remove(),600);
-  });
-});
+const canvas=document.getElementById('fx'),ctx=canvas.getContext('2d');let W,H,dots=[];
+function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;dots=Array.from({length:Math.min(100,Math.floor(W/12))},()=>({x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.6+.3,v:Math.random()*.35+.08,p:Math.random()*6.28}))}resize();addEventListener('resize',resize);
+function draw(t){ctx.clearRect(0,0,W,H);for(const p of dots){p.y-=p.v;if(p.y<0)p.y=H;p.p+=.015;ctx.fillStyle='rgba(105,236,255,'+(0.16+Math.sin(p.p)*.1)+')';ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}requestAnimationFrame(draw);
+function sound(){const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C(),o=c.createOscillator(),g=c.createGain();o.type='triangle';o.frequency.setValueAtTime(430,c.currentTime);o.frequency.exponentialRampToValueAtTime(760,c.currentTime+.08);g.gain.setValueAtTime(.0001,c.currentTime);g.gain.exponentialRampToValueAtTime(.045,c.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.14);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.15)}
+document.querySelectorAll('.click').forEach(a=>a.addEventListener('click',()=>{sound();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),650)}));
 </script>
 </body>
 </html>
