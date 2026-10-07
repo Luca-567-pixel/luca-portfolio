@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>LUCA — Personal Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg1:#07111f;--bg2:#102d62;--cyan:#61e7ff;--blue:#3f7cff;
+  --glass:rgba(255,255,255,.095);--line:rgba(255,255,255,.16);
+  --text:#f5f8ff;--muted:#aebbd2;
+}
+body{
+  min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;
+  overflow-x:hidden;background:
+    radial-gradient(circle at 18% 20%,rgba(61,139,255,.35),transparent 30%),
+    radial-gradient(circle at 85% 75%,rgba(0,231,255,.18),transparent 30%),
+    linear-gradient(135deg,var(--bg1),var(--bg2) 55%,#06101e);
+}
+body:before,body:after{content:"";position:fixed;inset:auto;z-index:-1;filter:blur(80px);border-radius:50%;pointer-events:none}
+body:before{width:260px;height:260px;left:-80px;top:35%;background:rgba(51,111,255,.3)}
+body:after{width:300px;height:300px;right:-110px;top:10%;background:rgba(0,217,255,.17)}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{width:min(1000px,92%);margin:auto;padding:34px 0 55px}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:45px}
+.logo{font-weight:800;letter-spacing:.12em;font-size:14px}
+.status{font-size:11px;color:#bfeeff;border:1px solid rgba(97,231,255,.28);background:rgba(97,231,255,.08);padding:8px 12px;border-radius:999px;backdrop-filter:blur(12px)}
+.hero{text-align:center;position:relative;padding:22px 0 18px}
+.character{
+  width:180px;height:180px;margin:0 auto 22px;position:relative;
+  filter:drop-shadow(0 24px 45px rgba(0,0,0,.45));
+  animation:float 4s ease-in-out infinite;
+}
+.head{position:absolute;width:76px;height:82px;border-radius:45% 45% 48% 48%;left:52px;top:34px;background:linear-gradient(145deg,#c78d70,#80513e);border:3px solid rgba(255,255,255,.12)}
+.hair{position:absolute;left:42px;top:18px;width:95px;height:52px;background:#111722;border-radius:50% 55% 35% 40%;transform:rotate(-3deg)}
+.hair:after{content:"";position:absolute;left:42px;top:-5px;width:17px;height:64px;background:#0c111a;transform:rotate(22deg);border-radius:90% 15% 80% 20%}
+.hair:before{content:"";position:absolute;left:23px;top:5px;width:15px;height:61px;background:#101622;transform:rotate(-16deg);border-radius:90% 20% 80% 20%}
+.eye{position:absolute;top:68px;width:7px;height:4px;border-radius:5px;background:#171717}.e1{left:71px}.e2{left:100px}
+.body{position:absolute;left:31px;top:99px;width:119px;height:68px;border-radius:28px 28px 12px 12px;background:linear-gradient(135deg,#68cfff,#1b58c8 58%,#102d73);border:2px solid rgba(255,255,255,.14)}
+.stripe{position:absolute;left:55px;top:103px;width:9px;height:58px;background:rgba(255,255,255,.75);transform:rotate(16deg);opacity:.45}
+.arm{position:absolute;width:28px;height:65px;top:101px;border-radius:20px;background:#b87960}.a1{left:22px;transform:rotate(16deg)}.a2{right:22px;transform:rotate(-16deg)}
+.title{font-size:clamp(42px,9vw,76px);line-height:.95;font-weight:800;letter-spacing:-.055em}
+.title span{background:linear-gradient(90deg,#fff,#75eaff,#77a4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:18px auto 0;max-width:620px;color:var(--muted);line-height:1.7;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:38px 0 20px}
+.card{
+  position:relative;min-height:185px;padding:24px;border:1px solid var(--line);
+  border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.045));
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  box-shadow:inset 0 1px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.18);
+  color:white;text-decoration:none;overflow:hidden;transition:.28s transform,.28s border-color,.28s box-shadow;
+}
+.card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.34);box-shadow:0 25px 65px rgba(0,0,0,.28)}
+.card:after{content:"";position:absolute;width:100px;height:100px;right:-35px;top:-40px;background:rgba(255,255,255,.1);filter:blur(4px);border-radius:50%}
+.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:22px;margin-bottom:22px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.13)}
+.tiktok{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(93,232,255,.06))}
+.tiktok .icon{box-shadow:0 0 30px rgba(97,231,255,.15)}
+.card h2{font-size:17px;margin-bottom:7px}.card p{font-size:12px;color:#aebbd2}.go{position:absolute;right:22px;bottom:22px;color:#bfefff}
+.note{text-align:center;color:#8797b3;font-size:11px;margin-top:28px}
+.footer{margin-top:38px;text-align:center;color:#7585a0;font-size:11px;letter-spacing:.08em}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media(max-width:700px){.cards{grid-template-columns:1fr}.card{min-height:145px}.wrap{padding-top:24px}.hero{padding-top:5px}}
+.ripple{position:fixed;width:10px;height:10px;border-radius:50%;background:rgba(150,240,255,.55);pointer-events:none;transform:translate(-50%,-50%);animation:ripple .55s ease-out forwards}
+@keyframes ripple{to{width:260px;height:260px;opacity:0}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="wrap">
+  <nav><div class="logo">LUCA / PORTFOLIO</div><div class="status">● ONLINE</div></nav>
+  <main>
+    <section class="hero">
+      <div class="character" aria-label="blue battle royale character">
+        <div class="hair"></div><div class="head"></div><div class="eye e1"></div><div class="eye e2"></div>
+        <div class="body"></div><div class="stripe"></div><div class="arm a1"></div><div class="arm a2"></div>
+      </div>
+      <h1 class="title">HEY, I'M <span>LUCA.</span></h1>
+      <p class="sub">Welcome to my personal space. Gaming, content, communities and everything I’m building online — all in one place.</p>
+    </section>
+
+    <section class="cards">
+      <a class="card tiktok" href="https://www.tiktok.com/@l.u.c.a1421" target="_blank" rel="noopener">
+        <div class="icon">♪</div><h2>TikTok</h2><p>@l.u.c.a1421</p><span class="go">↗</span>
+      </a>
+      <a class="card" href="https://t.me/Dadluca567" target="_blank" rel="noopener">
+        <div class="icon">✈</div><h2>Telegram</h2><p>@Dadluca567</p><span class="go">↗</span>
+      </a>
+      <a class="card" href="https://t.me/premiumrobloxnews" target="_blank" rel="noopener">
+        <div class="icon">◈</div><h2>Telegram Channel</h2><p>Premium Roblox News</p><span class="go">↗</span>
+      </a>
+    </section>
+    <div class="note">Tap any card — sound feedback is enabled.</div>
+  </main>
+  <div class="footer">LUCA • PERSONAL PORTFOLIO</div>
+</div>
+<script>
+function clickSound(){
+  const C=window.AudioContext||window.webkitAudioContext;
+  if(!C)return;
+  const ctx=new C(),o=ctx.createOscillator(),g=ctx.createGain();
+  o.type="sine";o.frequency.setValueAtTime(520,ctx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(760,ctx.currentTime+.08);
+  g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.055,ctx.currentTime+.01);
+  g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.12);
+  o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.13);
+}
+document.querySelectorAll(".card").forEach(card=>{
+  card.addEventListener("click",e=>{
+    clickSound();
+    const r=document.createElement("span");r.className="ripple";r.style.left=e.clientX+"px";r.style.top=e.clientY+"px";document.body.appendChild(r);
+    setTimeout(()=>r.remove(),600);
+  });
+});
+</script>
+</body>
+</html>
