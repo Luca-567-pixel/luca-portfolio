@@ -1,118 +1,48 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
-<title>Luca Digital Store</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#07080c;color:#f5f5f7;font-family:Inter,system-ui,Arial,sans-serif}
-a{text-decoration:none;color:inherit}.app{display:flex;min-height:100vh}
-aside{width:245px;position:fixed;left:0;top:0;bottom:0;background:#0c0d12;border-right:1px solid #20222b;padding:25px 16px;z-index:5}
-.logo{font-size:22px;font-weight:900;margin:0 10px 30px}.logo b{color:#8b5cf6}
-.navtitle{font-size:10px;color:#717582;text-transform:uppercase;letter-spacing:1.5px;margin:0 10px 9px}
-.nav button{width:100%;padding:13px 12px;border:0;border-radius:11px;background:transparent;color:#aaaeba;text-align:left;font-weight:800;cursor:pointer;margin-bottom:5px}
-.nav button.active,.navbutton:hover{background:#191525;color:#fff}
-.side{position:absolute;bottom:22px;left:16px;right:16px;padding:13px;background:#12141b;border:1px solid #242733;border-radius:13px;color:#8f94a3;font-size:12px;line-height:1.5}
-main{margin-left:245px;width:calc(100% - 245px);padding:32px;max-width:1400px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:28px}.welcome h1{margin:0;font-size:31px}.welcome p{margin:7px 0 0;color:#858b99}
-.tg{background:#6d4aff;padding:11px 16px;border-radius:11px;font-weight:900;white-space:nowrap}
-.hero{background:radial-gradient(circle at 80% 20%,#3b2675 0,#171329 32%,#101119 70%);border:1px solid #292b38;border-radius:20px;padding:28px;margin-bottom:25px}
-.hero h2{margin:0 0 8px;font-size:27px}.hero p{color:#aeb2bf;margin:0;line-height:1.6}
-.tools{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}.search{flex:1;min-width:220px;background:#101117;border:1px solid #272a34;border-radius:11px;padding:13px;color:#fff;outline:0}.search:focus{border-color:#7655e9}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
-.card{background:#101117;border:1px solid #222530;border-radius:16px;padding:16px;cursor:pointer;transition:.18s}.card:hover{transform:translateY(-3px);border-color:#58419a;background:#13141c}
-.icon{height:74px;width:74px;border-radius:17px;object-fit:cover;background:#191b24;margin-bottom:14px}.fallback{display:flex;align-items:center;justify-content:center;font-size:30px}
-.card h3{font-size:16px;margin:0 0 5px}.card p{font-size:12px;color:#777d8c;margin:0}.pill{display:inline-block;margin-top:12px;font-size:10px;color:#b9a8ff;background:#1a1530;padding:5px 8px;border-radius:20px}
-#products{scroll-margin-top:20px}.hidden{display:none}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.show{display:flex}
-.box{width:min(600px,100%);max-height:88vh;overflow:auto;background:#101117;border:1px solid #2b2e3a;border-radius:20px;padding:22px;box-shadow:0 25px 80px #000}
-.boxhead{display:flex;justify-content:space-between;gap:10px;align-items:center}.boxhead h2{margin:0}.close{border:0;background:#1d2029;color:#fff;border-radius:9px;padding:8px 11px;cursor:pointer}
-.priceitem{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 12px;border-bottom:1px solid #222530}.priceitem:last-child{border:0}.pname{font-weight:800}.cost{font-weight:900;color:#bdaaff;white-space:nowrap}
-.order{width:100%;border:0;background:linear-gradient(135deg,#805cff,#603bd9);color:#fff;padding:13px;border-radius:11px;font-weight:900;margin-top:16px;cursor:pointer}
-.note{font-size:11px;color:#777d8c;margin-top:10px;text-align:center}
-@media(max-width:760px){aside{width:70px;padding:18px 9px}.logo{font-size:0;text-align:center;margin:0 0 25px}.logo b{font-size:25px}.navtitle,.side{display:none}.nav button{font-size:0;text-align:center;padding:13px 5px}.nav button:before{font-size:20px}.nav button:nth-child(1):before{content:"◉"}.nav button:nth-child(2):before{content:"◆"}.nav button:nth-child(3):before{content:"⌕"}.nav button.active{font-size:0}main{margin-left:70px;width:calc(100% - 70px);padding:20px}.top{align-items:flex-start}.welcome h1{font-size:24px}.tg{font-size:0;padding:11px 13px}.tg:after{content:"✈";font-size:18px}.hero h2{font-size:22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:13px}.icon{width:58px;height:58px}}
-</style>
-</head>
-<body>
-<div class="app">
-<aside>
-  <div class="logo">Luca <b>Digital</b></div>
-  <div class="navtitle">Categories</div>
-  <div class="nav">
-    <button id="appBtn" class="active" onclick="setCat('apps')">App Premium</button>
-    <button id="gameBtn" onclick="setCat('games')">Dia / UC</button>
-  </div>
-  <div class="side">Fast order<br><b style="color:#fff">@Dadluca567</b></div>
-</aside>
-
-<main>
-  <div class="top">
-    <div class="welcome"><h1>Luca Digital Store</h1><p>Premium Apps & Game Items</p></div>
-    <a class="tg" href="https://t.me/Dadluca567" target="_blank">Telegram</a>
-  </div>
-
-  <section class="hero">
-    <h2>Choose what you need.</h2>
-    <p>Select a product to see the available packages and prices. When you choose a package, you can send the order directly to Luca on Telegram.</p>
-  </section>
-
-  <div class="tools"><input id="search" class="search" placeholder="Search products..." oninput="render()"></div>
-  <div id="products" class="grid"></div>
-</main>
-</div>
-
-<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
-  <div class="box">
-    <div class="boxhead"><h2 id="modalTitle"></h2><button class="close" onclick="closeModal()">✕</button></div>
-    <div id="prices"></div>
-    <button id="orderBtn" class="order" onclick="sendOrder()">Order on Telegram</button>
-    <div class="note">Your selected product, package and price will be included in the Telegram message.</div>
-  </div>
-</div>
-
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07070b"><title>Luca Digital Store</title><style>
+:root{--bg:#06070b;--panel:#0d0f15;--line:#242833;--text:#f8f8fb;--muted:#858c9d;--p:#8b5cf6;--cyan:#22d3ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 55% -10%,rgba(139,92,246,.24),transparent 60%),radial-gradient(700px 450px at 100% 45%,rgba(34,211,238,.07),transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}a{text-decoration:none;color:inherit}
+.layout{display:flex;min-height:100vh}.sidebar{position:fixed;z-index:50;left:0;top:0;bottom:0;width:260px;padding:22px 15px;background:rgba(9,10,15,.9);backdrop-filter:blur(24px);border-right:1px solid #20232d;display:flex;flex-direction:column}.brand{padding:8px 12px 28px;font-size:21px;font-weight:950;letter-spacing:-.8px}.brand span{color:var(--p)}.brand small{display:block;color:#687080;font-size:9px;letter-spacing:2px;margin-top:5px}.side-title{font-size:9px;color:#656b79;letter-spacing:1.7px;font-weight:900;padding:0 12px 9px;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{border:1px solid transparent;background:transparent;color:#969baa;border-radius:12px;padding:13px 12px;text-align:left;font-weight:850;display:flex;align-items:center;gap:11px;transition:.18s}.nav button:hover{background:#151722;color:#fff}.nav button.active{background:linear-gradient(100deg,rgba(139,92,246,.23),rgba(34,211,238,.05));border-color:#3b315b;color:#fff;box-shadow:inset 3px 0 var(--p)}.ico{width:24px;text-align:center;font-size:17px}.side-bottom{margin-top:auto;background:#10121a;border:1px solid #222631;border-radius:15px;padding:14px;color:#777e8e;font-size:11px;line-height:1.6}.side-bottom strong{color:#fff;font-size:12px}
+main{margin-left:260px;width:calc(100% - 260px);min-width:0;padding:26px 30px 70px}.top{display:flex;justify-content:flex-end;margin-bottom:20px}.actions{display:flex;gap:9px;width:min(520px,100%)}.search{flex:1;min-width:0;background:#0d0f15;border:1px solid #252936;border-radius:12px;padding:11px 13px;color:#fff;outline:0}.search:focus{border-color:#5b43a0}.tg{padding:11px 15px;border-radius:12px;background:#151220;border:1px solid #312752;font-weight:900;font-size:13px}
+.hero{position:relative;overflow:hidden;border:1px solid #292c37;border-radius:23px;padding:31px;background:radial-gradient(circle at 85% 20%,rgba(139,92,246,.34),transparent 27%),radial-gradient(circle at 72% 100%,rgba(34,211,238,.1),transparent 35%),linear-gradient(120deg,#10121a,#0d0f16)}.kicker{color:#bdaaff;font-size:10px;font-weight:950;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(32px,4vw,55px);line-height:.98;letter-spacing:-2.8px;margin:11px 0 12px}h1 span{color:var(--p)}.hero p{color:#9ca2b1;max-width:650px;line-height:1.65;margin:0}.stats{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.stat{border:1px solid #292d38;background:#05060a55;padding:9px 11px;border-radius:10px;color:#a4a9b7;font-size:11px}.stat b{color:#fff}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 14px}.title{font-size:23px;font-weight:950;letter-spacing:-.8px}.title span{color:var(--p)}.count{color:#707687;font-size:11px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:13px}.card{position:relative;overflow:hidden;background:linear-gradient(180deg,#12141c,#0e1016);border:1px solid #242832;border-radius:17px;padding:16px;min-height:205px;transition:.18s;cursor:pointer}.card:hover{transform:translateY(-4px);border-color:#514080;box-shadow:0 17px 45px #00000059}.icon{width:58px;height:58px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:#191b24;border:1px solid #2a2d39;font-size:25px;margin-bottom:14px}.card h3{font-size:15px;margin:0 0 6px}.card p{margin:0;color:#777e8e;font-size:11px}.foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.tag{font-size:9px;color:#bba9ff;background:#1b1630;border:1px solid #31265a;border-radius:999px;padding:5px 8px;font-weight:900}.arrow{color:#777e8e;font-size:18px}.empty{display:none;padding:50px;text-align:center;color:#777e8e;border:1px dashed #292d38;border-radius:16px}
+.modal{position:fixed;inset:0;z-index:100;background:#000000b8;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.dialog{width:min(650px,100%);max-height:88vh;overflow:auto;background:#0f1118;border:1px solid #2b2f3b;border-radius:21px;box-shadow:0 20px 70px #000;padding:21px}.head{display:flex;align-items:center;gap:13px;border-bottom:1px solid #242832;padding-bottom:16px}.micon{width:52px;height:52px;border-radius:14px;background:#191b24;display:flex;align-items:center;justify-content:center;font-size:24px}.mtitle{flex:1}.mtitle h2{font-size:20px;margin:0}.mtitle p{font-size:11px;color:#737a89;margin:4px 0 0}.close{border:0;background:#1b1e27;color:#fff;border-radius:9px;padding:8px 11px}.prices{padding-top:10px}.price{display:flex;align-items:center;gap:10px;padding:12px 10px;border-bottom:1px solid #20232c;border-radius:9px}.price:hover{background:#141721}.price input{accent-color:var(--p)}.pname{flex:1;font-size:13px;font-weight:750}.cost{font-size:13px;color:#c4b5fd;font-weight:950;white-space:nowrap}.order{width:100%;margin-top:16px;border:0;border-radius:12px;padding:13px;color:#fff;font-weight:950;background:linear-gradient(100deg,#8057f5,#6040cf)}.notice{text-align:center;color:#656c7b;font-size:10px;margin-top:9px}
+@media(max-width:850px){.sidebar{width:78px;padding:17px 8px}.brand{font-size:0;text-align:center;padding:5px 0 25px}.brand span{font-size:24px}.brand span:before{content:"L"}.brand small,.side-title,.side-bottom,.nav .label{display:none}.nav button{justify-content:center;padding:13px 5px}.nav .ico{font-size:20px;width:auto}main{margin-left:78px;width:calc(100% - 78px);padding:20px 18px 50px}}
+@media(max-width:560px){.sidebar{width:100%;height:67px;left:0;right:0;top:auto;bottom:0;padding:7px 9px;border:0;border-top:1px solid #242731;background:#090a0ff2}.nav{grid-template-columns:repeat(4,1fr);height:100%}.nav button{padding:4px 2px;justify-content:center;flex-direction:column;gap:2px;font-size:9px}.nav .label{display:block;font-size:9px}.nav .ico{font-size:17px}.nav button.active{box-shadow:inset 0 -2px var(--p)}main{margin:0;width:100%;padding:14px 13px 88px}.actions{width:100%}.tg{font-size:0;padding:10px 12px}.tg:after{content:"✈";font-size:17px}.hero{padding:23px 20px;border-radius:18px}h1{font-size:34px;letter-spacing:-2px}.hero p{font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:13px;min-height:175px;border-radius:14px}.icon{width:50px;height:50px;font-size:21px}.card h3{font-size:13px}.card p{font-size:10px}.dialog{padding:16px;border-radius:18px}.pname,.cost{font-size:12px}}
+</style></head><body>
+<div class="layout"><aside class="sidebar"><div class="brand">Luca <span>Digital</span><small>Premium Store</small></div><div class="side-title">Categories</div><nav class="nav">
+<button class="active" data-cat="apps"><span class="ico">◈</span><span class="label">App Premium</span></button>
+<button data-cat="games"><span class="ico">◆</span><span class="label">Dia / UC</span></button>
+<button data-cat="music"><span class="ico">♫</span><span class="label">Music Premium</span></button>
+<button data-cat="ai"><span class="ico">✦</span><span class="label">AI Tools</span></button></nav><div class="side-bottom">Direct orders<br><strong>@Dadluca567</strong></div></aside>
+<main><div class="top"><div class="actions"><input id="search" class="search" placeholder="Search products..." autocomplete="off"><a class="tg" href="https://t.me/Dadluca567" target="_blank">Telegram</a></div></div>
+<section class="hero"><div class="kicker">LUCA DIGITAL STORE • PREMIUM</div><h1>Digital products.<br><span>Simple. Fast. Premium.</span></h1><p>Choose a category, pick your product and package, then send the order directly to Luca on Telegram.</p><div class="stats"><div class="stat"><b>4</b> categories</div><div class="stat"><b>35</b> products</div><div class="stat">Order via <b>Telegram</b></div></div></section>
+<div class="toolbar"><div class="title" id="title">App <span>Premium</span></div><div class="count" id="count"></div></div><div id="grid" class="grid"></div><div id="empty" class="empty">No products found.</div></main></div>
+<div class="modal" id="modal"><div class="dialog"><div class="head"><div class="micon" id="mi"></div><div class="mtitle"><h2 id="mn"></h2><p id="ms"></p></div><button class="close" id="close">✕</button></div><div class="prices" id="prices"></div><button class="order" id="order">Order selected package on Telegram</button><div class="notice">Select one package first. Your product, package and price will be included in the Telegram message.</div></div></div>
 <script>
-const TG="Dadluca567";
-const icon=(name)=>`https://cdn.simpleicons.org/${name}`;
-const products=[
- {cat:"apps",name:"Jump Jump VPN",icon:"jump",prices:[
-  ["1 Month · 1 Device · Share","10,300 MMK"],["1 Month · 1 Device · Own","14,800 MMK"],
-  ["1 Month · 2 Devices","19,300 MMK"],["6 Month · 2 Devices","95,300 MMK"],["12 Month · 2 Devices","123,300 MMK"]]},
- {cat:"apps",name:"Express VPN",icon:"expressvpn",prices:[["1 Month · 1 Device","2,000 MMK"],["1 Month · 12 Devices","12,000 MMK"]]},
- {cat:"apps",name:"HMA",icon:"hmapro",prices:[["1 Month · 1 Device","3,800 MMK"]]},
- {cat:"apps",name:"Outline Unlimited GB",icon:"outline",prices:[["1 Month · 1 Device","3,300 MMK"]]},
- {cat:"apps",name:"Hiddify / V2Ray",icon:"hiddify",prices:[["1 Month · 50 GB","4,500 MMK"],["1 Month · 100 GB","5,900 MMK"],["1 Month · 150 GB","7,300 MMK"],["1 Month · 200 GB","8,800 MMK"]]},
- {cat:"apps",name:"Telegram Premium",icon:"telegram",prices:[["1 Month · Login","20,800 MMK"],["SMS Fee","9,500 MMK"],["Gift Plan · 3 Month","55,300 MMK"],["Gift Plan · 6 Month","73,300 MMK"],["Gift Plan · 1 Year","190,300 MMK"]]},
- {cat:"apps",name:"Telegram Stars",icon:"telegram",prices:[["50 Stars","4,000 MMK"],["100 Stars","7,900 MMK"],["150 Stars","11,700 MMK"],["200 Stars","15,500 MMK"],["300 Stars","23,000 MMK"],["500 Stars","38,300 MMK"],["1000 Stars","76,300 MMK"],["2000 Stars","152,300 MMK"]]},
- {cat:"apps",name:"Alight Motion Premium",icon:"alightmotion",prices:[["Share Account","1,800 MMK"],["Private Account","2,300 MMK"]]},
- {cat:"apps",name:"CapCut Pro",icon:"capcut",prices:[["1 Month · Share Account","5,300 MMK"],["1 Month · Private Account","8,300 MMK"],["6 Month · Share Account","24,300 MMK"],["6 Month · Private Account","48,300 MMK"]]},
- {cat:"apps",name:"TikTok Coin",icon:"tiktok",prices:[["100 Coins","5,900 MMK"],["200 Coins","11,800 MMK"],["300 Coins","17,300 MMK"],["400 Coins","22,900 MMK"],["500 Coins","27,800 MMK"],["1000 Coins","53,300 MMK"],["2000 Coins","103,300 MMK"],["3000 Coins","153,300 MMK"],["5000 Coins","260,300 MMK"],["10000 Coins","500,300 MMK"]]},
- {cat:"games",name:"UC",icon:"pubg",prices:[["60 UC","4,300 MMK"],["325 UC","19,900 MMK"],["660 UC","39,300 MMK"],["1800 UC","93,300 MMK"],["3850 UC","185,800 MMK"],["8100 UC","369,300 MMK"],["Error ID · 60 UC","4,500 MMK"],["Error ID · 325 UC","20,300 MMK"],["Error ID · 660 UC","40,300 MMK"],["Error ID · 1800 UC","100,300 MMK"],["Error ID · 3850 UC","200,300 MMK"],["Error ID · 8100 UC","390,500 MMK"]]},
- {cat:"games",name:"Diamond · 2X",icon:"mobilelegends",prices:[["50 · 2X","3,900 MMK"],["150 · 2X","11,000 MMK"],["250 · 2X","17,500 MMK"],["500 · 2X","35,500 MMK"],["2X · 4 Packages","66,900 MMK"],["Weekly Pass","6,900 MMK"],["3 Weekly Pass · 2X Recharge","20,700 MMK"],["Twilight Pass","37,000 MMK"]]},
- {cat:"games",name:"Diamond · Normal",icon:"mobilelegends",prices:[["14 Diamond","1,450 MMK"],["28 Diamond","2,800 MMK"],["42 Diamond","3,800 MMK"],["86 Diamond","5,800 MMK"],["172 Diamond","11,400 MMK"],["257 Diamond","16,300 MMK"],["343 Diamond","21,900 MMK"],["429 Diamond","27,500 MMK"],["514 Diamond","32,600 MMK"],["600 Diamond","38,100 MMK"],["706 Diamond","43,950 MMK"],["878 Diamond","55,300 MMK"],["963 Diamond","60,300 MMK"],["1049 Diamond","65,800 MMK"],["1135 Diamond","71,400 MMK"],["1412 Diamond","87,900 MMK"],["2195 Diamond","132,900 MMK"],["3688 Diamond","221,600 MMK"],["5532 Diamond","334,650 MMK"],["9288 Diamond","55,600 MMK"]]},
- {cat:"games",name:"Ban Server Diamond",icon:"mobilelegends",prices:[["WP","9,900 MMK"],["14 Diamond","1,600 MMK"],["28 Diamond","2,900 MMK"],["42 Diamond","4,000 MMK"],["70 Diamond","5,900 MMK"],["84 Diamond","7,800 MMK"],["140 Diamond","11,800 MMK"],["182 Diamond","15,300 MMK"],["210 Diamond","17,300 MMK"],["284 Diamond","23,500 MMK"],["355 Diamond","28,300 MMK"],["429 Diamond","35,300 MMK"],["513 Diamond","40,900 MMK"],["639 Diamond","51,800 MMK"],["716 Diamond","58,300 MMK"],["870 Diamond","69,300 MMK"],["1084 Diamond","83,800 MMK"],["1159 Diamond","90,300 MMK"],["1446 Diamond","110,300 MMK"],["1586 Diamond","125,300 MMK"],["1875 Diamond","140,300 MMK"],["2162 Diamond","170,300 MMK"],["2530 Diamond","190,300 MMK"],["2976 Diamond","217,800 MMK"],["3345 Diamond","245,300 MMK"],["3846 Diamond","280,300 MMK"],["4562 Diamond","331,300 MMK"],["5138 Diamond","375,300 MMK"],["6092 Diamond","450,300 MMK"],["6668 Diamond","475,300 MMK"],["7502 Diamond","545,300 MMK"]]}
-];
-
-let category="apps", current=null, selected=null;
-function setCat(cat){category=cat;document.getElementById("appBtn").classList.toggle("active",cat==="apps");document.getElementById("gameBtn").classList.toggle("active",cat==="games");render()}
+const TG="Dadluca567",DATA=[{"c": "games", "n": "UC", "i": "🎯", "p": [["60 UC", "4,300 MMK"], ["325 UC", "19,900 MMK"], ["660 UC", "39,300 MMK"], ["1800 UC", "93,300 MMK"], ["3850 UC", "185,800 MMK"], ["8100 UC", "369,300 MMK"], ["Error ID · 60 UC", "4,500 MMK"], ["Error ID · 325 UC", "20,300 MMK"], ["Error ID · 660 UC", "40,300 MMK"], ["Error ID · 1800 UC", "100,300 MMK"], ["Error ID · 3850 UC", "200,300 MMK"], ["Error ID · 8100 UC", "390,500 MMK"]]}, {"c": "games", "n": "Diamond · 2X", "i": "💎", "p": [["50 2x", "3,900 MMK"], ["1500 2x", "11,000 MMK"], ["250 2x", "17,500 MMK"], ["500 2x", "35,500 MMK"], ["2x 4 Packages", "66,900 MMK"], ["Weekly Pass", "6,900 MMK"], ["3 Weekly Pass · 2x recharge", "20,700 MMK"], ["Twilight Pass", "37,000 MMK"]]}, {"c": "games", "n": "Weekly / Monthly Bundle", "i": "🎁", "p": [["Weekly Bundle", "3,800 MMK"], ["Monthly Bundle", "18,200 MMK"]]}, {"c": "games", "n": "Diamond · Normal", "i": "💎", "p": [["14 Diamond", "1,450 MMK"], ["28 Diamond", "2,800 MMK"], ["42 Diamond", "3,800 MMK"], ["86 Diamond", "5,800 MMK"], ["172 Diamond", "11,400 MMK"], ["257 Diamond", "16,300 MMK"], ["343 Diamond", "21,900 MMK"], ["429 Diamond", "27,500 MMK"], ["514 Diamond", "32,600 MMK"], ["600 Diamond", "38,100 MMK"], ["706 Diamond", "43,950 MMK"], ["878 Diamond", "55,300 MMK"], ["963 Diamond", "60,300 MMK"], ["1049 Diamond", "65,800 MMK"], ["1135 Diamond", "71,400 MMK"], ["1412 Diamond", "87,900 MMK"], ["2195 Diamond", "132,900 MMK"], ["3688 Diamond", "221,600 MMK"], ["5532 Diamond", "334,650 MMK"], ["9288 Diamond", "55,600 MMK"]]}, {"c": "games", "n": "Ban Server Diamond", "i": "💠", "p": [["WP", "9,900 MMK"], ["14", "1,600 MMK"], ["28", "2,900 MMK"], ["42", "4,000 MMK"], ["70", "5,900 MMK"], ["84", "7,800 MMK"], ["140", "11,800 MMK"], ["182", "15,300 MMK"], ["210", "17,300 MMK"], ["284", "23,500 MMK"], ["355", "28,300 MMK"], ["429", "35,300 MMK"], ["513", "40,900 MMK"], ["639", "51,800 MMK"], ["716", "58,300 MMK"], ["870", "69,300 MMK"], ["1084", "83,800 MMK"], ["1159", "90,300 MMK"], ["1446", "110,300 MMK"], ["1586", "125,300 MMK"], ["1875", "140,300 MMK"], ["2162", "170,300 MMK"], ["2530", "190,300 MMK"], ["2976", "217,800 MMK"], ["3345", "245,300 MMK"], ["3846", "280,300 MMK"], ["4562", "331,300 MMK"], ["5138", "375,300 MMK"], ["6092", "450,300 MMK"], ["6668", "475,300 MMK"], ["7502", "545,300 MMK"]]}, {"c": "games", "n": "Robux · All Region", "i": "🟩", "p": [["40 Robux", "3,000 MMK"], ["80 Robux", "5,800 MMK"], ["400 Robux", "25,300 MMK"], ["800 Robux", "49,300 MMK"], ["1700 Robux", "97,800 MMK"], ["4500 Robux", "245,300 MMK"], ["10000 Robux", "495,300 MMK"], ["22500 Robux", "950,300 MMK"]]}, {"c": "games", "n": "Roblox $ Account", "i": "🟢", "p": [["500", "2,850 MMK"], ["1000", "51,300 MMK"], ["2000", "101,800 MMK"], ["5250", "250,300 MMK"], ["11000", "495,300 MMK"], ["24000", "990,300 MMK"]]}, {"c": "games", "n": "Roblox Premium", "i": "👑", "p": [["Roblox Plus 1M", "26,800 MMK"], ["1M + 500", "46,800 MMK"], ["1M + 1000", "67,300 MMK"], ["1M + 2000", "106,300 MMK"]]}, {"c": "apps", "n": "Express VPN", "i": "🛡️", "p": [["1 Month · 1 Device", "2,000 MMK"], ["1 Month · 12 Devices", "12,000 MMK"]]}, {"c": "apps", "n": "HMA", "i": "🛡️", "p": [["1 Month · 1 Device", "3,800 MMK"]]}, {"c": "apps", "n": "Outline Unlimited GB", "i": "◉", "p": [["1 Month · 1 Device", "3,300 MMK"]]}, {"c": "apps", "n": "Hiddify / V2Ray", "i": "◌", "p": [["1 Month · 50 GB", "4,500 MMK"], ["1 Month · 100 GB", "5,900 MMK"], ["1 Month · 150 GB", "7,300 MMK"], ["1 Month · 200 GB", "8,800 MMK"]]}, {"c": "apps", "n": "Jump Jump VPN", "i": "⚡", "p": [["1 Month · 1 Device · Share", "10,300 MMK"], ["1 Month · 1 Device · Own", "14,800 MMK"], ["1 Month · 2 Devices", "19,300 MMK"], ["6 Month · 2 Devices", "95,300 MMK"], ["12 Month · 2 Devices", "123,300 MMK"]]}, {"c": "apps", "n": "Telegram Premium", "i": "✈️", "p": [["1 Month · Login", "20,800 MMK"], ["SMS Fee", "9,500 MMK"], ["Gift Plan · 3 Month", "55,300 MMK"], ["Gift Plan · 6 Month", "73,300 MMK"], ["Gift Plan · 1 Year", "190,300 MMK"]]}, {"c": "apps", "n": "Telegram Stars", "i": "⭐", "p": [["50 Stars", "4,000 MMK"], ["100 Stars", "7,900 MMK"], ["150 Stars", "11,700 MMK"], ["200 Stars", "15,500 MMK"], ["300 Stars", "23,000 MMK"], ["500 Stars", "38,300 MMK"], ["1000 Stars", "76,300 MMK"], ["2000 Stars", "152,300 MMK"]]}, {"c": "apps", "n": "Alight Motion Premium", "i": "◒", "p": [["Share Acc", "1,800 MMK"], ["Private Acc", "2,300 MMK"]]}, {"c": "apps", "n": "CapCut Pro", "i": "✂️", "p": [["1 Month · Share Acc", "5,300 MMK"], ["1 Month · Private Acc", "8,300 MMK"], ["6 Month · Share Acc", "24,300 MMK"], ["6 Month · Private Acc", "48,300 MMK"]]}, {"c": "apps", "n": "TikTok Coin", "i": "♪", "p": [["100 Coins", "5,900 MMK"], ["200 Coins", "11,800 MMK"], ["300 Coins", "17,300 MMK"], ["400 Coins", "22,900 MMK"], ["500 Coins", "27,800 MMK"], ["1000 Coins", "53,300 MMK"], ["2000 Coins", "103,300 MMK"], ["3000 Coins", "153,300 MMK"], ["5000 Coins", "260,300 MMK"], ["10000 Coins", "500,300 MMK"]]}, {"c": "apps", "n": "Wink Pro", "i": "▶", "p": [["VIP 1 Month · Share Acc", "6,300 MMK"], ["VIP 1 Month · Private Acc", "16,300 MMK"], ["VIP 1 Year · Share Acc", "35,300 MMK"], ["VIP 1 Year · Private Acc", "120,300 MMK"]]}, {"c": "apps", "n": "Meitu VIP", "i": "M", "p": [["1 Month · Private Acc", "14,300 MMK"], ["1 Year · Private Acc", "110,300 MMK"]]}, {"c": "apps", "n": "SuperVIP", "i": "♛", "p": [["3 Month · Private Acc", "55,300 MMK"], ["1 Year · Private Acc", "16,800 MMK"]]}, {"c": "apps", "n": "Picsart Pro", "i": "P", "p": [["1 Month · Share Acc", "5,300 MMK"], ["1 Month · Private Acc", "9,800 MMK"]]}, {"c": "apps", "n": "Canva Pro", "i": "C", "p": [["Lifetime", "2,300 MMK"], ["1 Year · Own Mail Invite", "35,300 MMK"]]}, {"c": "apps", "n": "YouTube Premium", "i": "▶", "p": [["1 Month", "9,300 MMK"]]}, {"c": "apps", "n": "Netflix Premium", "i": "N", "p": [["1 Month · Share", "8,300 MMK"], ["1 Month · Own", "14,300 MMK"], ["2 Months · Share", "15,800 MMK"], ["2 Months · Own", "27,800 MMK"], ["6 Months · Share", "45,300 MMK"], ["6 Months · Own", "80,300 MMK"]]}, {"c": "apps", "n": "Discord Nitro", "i": "♜", "p": [["Basic · 1 Month", "17,800 MMK"], ["Basic · 1 Year", "142,300 MMK"], ["Nitro · 1 Month", "51,300 MMK"], ["Nitro · 1 Year", "460,300 MMK"]]}, {"c": "apps", "n": "Microsoft Office 365 Family", "i": "▦", "p": [["1 Month · Mail Invite", "6,300 MMK"], ["1 Year · Ready Made Acc", "37,300 MMK"]]}, {"c": "apps", "n": "Duolingo", "i": "🦉", "p": [["Super 1 Year · Current Account", "10,300 MMK"], ["Super 1 Year · New Account", "5,300 MMK"]]}, {"c": "music", "n": "Spotify Premium", "i": "●", "p": [["Individual · 1 Month", "8,800 MMK"], ["Individual · 3 Months", "32,800 MMK"], ["Individual · 6 Months", "52,300 MMK"], ["Individual · 1 Year", "75,300 MMK"], ["Family · 2 Months", "12,300 MMK"], ["Family · 3 Months", "16,300 MMK"], ["Family · 6 Months", "29,300 MMK"], ["Family · 1 Year", "50,300 MMK"]]}, {"c": "music", "n": "Apple Music", "i": "♫", "p": [["1 Month · Family Invite", "5,300 MMK"]]}, {"c": "ai", "n": "ChatGPT", "i": "✦", "p": [["Plus · 1 Month · Share Acc", "16,300 MMK"], ["Plus · 1 Month · Private Acc", "85,300 MMK"], ["Go · 1 Month · Private Acc", "30,300 MMK"]]}, {"c": "ai", "n": "Gemini Pro", "i": "✧", "p": [["1 Month", "6,300 MMK"], ["3 Months", "12,300 MMK"]]}, {"c": "ai", "n": "Super Grok", "i": "G", "p": [["1 Month", "120,300 MMK"], ["3 Months", "255,300 MMK"]]}, {"c": "ai", "n": "King", "i": "♛", "p": [["1 Month · Private", "42,300 MMK"]]}, {"c": "ai", "n": "Claude", "i": "C", "p": [["1 Month · Private", "105,300 MMK"]]}];
+const titles={apps:["App ","Premium"],games:["Dia ","/ UC"],music:["Music ","Premium"],ai:["AI ","Tools"]};
+let cat="apps",cur=null,sel=-1;
+const $=id=>document.getElementById(id);
 function render(){
- const q=document.getElementById("search").value.toLowerCase().trim();
- const box=document.getElementById("products");box.innerHTML="";
- products.filter(p=>p.cat===category && p.name.toLowerCase().includes(q)).forEach((p,i)=>{
-   const c=document.createElement("div");c.className="card";
-   c.innerHTML=`<img class="icon" src="${icon(p.icon)}" onerror="this.outerHTML='<div class=\\'icon fallback\\'>${p.cat==='apps'?'✦':'◆'}</div>'"><h3>${p.name}</h3><p>${p.prices.length} packages available</p><span class="pill">View prices →</span>`;
-   c.onclick=()=>openModal(p);box.appendChild(c)
- });
+ let q=$("search").value.toLowerCase().trim(), a=DATA.filter(x=>x.c===cat&&x.n.toLowerCase().includes(q));
+ $("title").innerHTML=titles[cat][0]+"<span>"+titles[cat][1]+"</span>";
+ $("count").textContent=a.length+" products"; $("grid").innerHTML="";
+ $("empty").style.display=a.length?"none":"block";
+ a.forEach(x=>{let e=document.createElement("article");e.className="card";
+ e.innerHTML='<div class="icon">'+x.i+'</div><h3>'+x.n+'</h3><p>'+x.p.length+' packages available</p><div class="foot"><span class="tag">VIEW PRICES</span><span class="arrow">→</span></div>';
+ e.onclick=()=>openProduct(x);$("grid").appendChild(e)})
 }
-function openModal(p){current=p;selected=null;document.getElementById("modalTitle").textContent=p.name;document.getElementById("prices").innerHTML=p.prices.map((x,i)=>`<label class="priceitem"><span class="pname"><input type="radio" name="pkg" value="${i}" onchange="selected=${i}"> ${x[0]}</span><span class="cost">${x[1]}</span></label>`).join("");document.getElementById("modal").classList.add("show")}
-function closeModal(){document.getElementById("modal").classList.remove("show")}
-function sendOrder(){
- if(selected===null){alert("Please select a package first.");return}
- const p=current.prices[selected];
- const msg=`Hello Luca, I want to order:%0A%0AProduct: ${current.name}%0APackage: ${p[0]}%0APrice: ${p[1]}%0A%0AFrom Luca Digital Store`;
- window.open(`https://t.me/${TG}?text=${msg}`,"_blank")
+function openProduct(x){
+ cur=x;sel=-1;$("mi").textContent=x.i;$("mn").textContent=x.n;$("ms").textContent=x.p.length+" available packages";
+ $("prices").innerHTML=x.p.map((a,i)=>'<label class="price"><input type="radio" name="pkg" value="'+i+'"><span class="pname">'+a[0]+'</span><span class="cost">'+a[1]+'</span></label>').join("");
+ document.querySelectorAll('input[name=pkg]').forEach(r=>r.onchange=()=>sel=+r.value);
+ $("modal").classList.add("show");document.body.style.overflow="hidden"
 }
-render();
-</script>
-</body>
-</html>
+function closeProduct(){$("modal").classList.remove("show");document.body.style.overflow="";sel=-1}
+$("close").onclick=closeProduct;$("modal").onclick=e=>{if(e.target===$("modal"))closeProduct()};
+$("order").onclick=()=>{if(sel<0)return alert("Please select a package first.");
+ let a=cur.p[sel],msg="Hello Luca 👋%0A%0AI want to order:%0A%0AProduct: "+encodeURIComponent(cur.n)+"%0APackage: "+encodeURIComponent(a[0])+"%0APrice: "+encodeURIComponent(a[1])+"%0A%0AFrom Luca Digital Store";
+ window.open("https://t.me/"+TG+"?text="+msg,"_blank")};
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");$("search").value="";render();scrollTo({top:0,behavior:"smooth"})});
+$("search").oninput=render;document.onkeydown=e=>{if(e.key==="Escape")closeProduct()};render();
+</script></body></html>
