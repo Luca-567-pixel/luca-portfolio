@@ -76,27 +76,87 @@ main{margin-left:245px;width:calc(100% - 245px);padding:32px;max-width:1400px}
 <script>
 const TG="Dadluca567";
 const icon=(name)=>`https://cdn.simpleicons.org/${name}`;
-const products=[{"cat":"games","name":"UC","icon":"pubg","prices":[["60 UC","4,300 MMK"],["325 UC","19,900 MMK"],["660 UC","39,300 MMK"],["1800 UC","93,300 MMK"],["3850 UC","185,800 MMK"],["8100 UC","369,300 MMK"],["Error ID · 60 UC","4,500 MMK"],["Error ID · 325 UC","20,300 MMK"],["Error ID · 660 UC","40,300 MMK"],["Error ID · 1800 UC","100,300 MMK"],["Error ID · 3850 UC","200,300 MMK"],["Error ID · 8100 UC","390,500 MMK"]]},{"cat":"games","name":"Diamond · 2X","icon":"mobilelegends","prices":[["50 2x","3,900 MMK"],["1500 2x","11,000 MMK"],["250 2x","17,500 MMK"],["500 2x","35,500 MMK"],["2x 4 Packages","66,900 MMK"],["Weekly Pass","6,900 MMK"],["3 Weekly Pass · 2x recharge","20,700 MMK"],["Twilight Pass","37,000 MMK"]]},{"cat":"games","name":"Weekly / Monthly Bundle","icon":"🎁","prices":[["Weekly Bundle","3,800 MMK"],["Monthly Bundle","18,200 MMK"]]},{"cat":"games","name":"Diamond · Normal","icon":"mobilelegends","prices":[["14 Diamond","1,450 MMK"],["28 Diamond","2,800 MMK"],["42 Diamond","3,800 MMK"],["86 Diamond","5,800 MMK"],["172 Diamond","11,400 MMK"],["257 Diamond","16,300 MMK"],["343 Diamond","21,900 MMK"],["429 Diamond","27,500 MMK"],["514 Diamond","32,600 MMK"],["600 Diamond","38,100 MMK"],["706 Diamond","43,950 MMK"],["878 Diamond","55,300 MMK"],["963 Diamond","60,300 MMK"],["1049 Diamond","65,800 MMK"],["1135 Diamond","71,400 MMK"],["1412 Diamond","87,900 MMK"],["2195 Diamond","132,900 MMK"],["3688 Diamond","221,600 MMK"],["5532 Diamond","334,650 MMK"],["9288 Diamond","55,600 MMK"]]},{"cat":"games","name":"Ban Server Diamond","icon":"mobilelegends","prices":[["WP","9,900 MMK"],["14","1,600 MMK"],["28","2,900 MMK"],["42","4,000 MMK"],["70","5,900 MMK"],["84","7,800 MMK"],["140","11,800 MMK"],["182","15,300 MMK"],["210","17,300 MMK"],["284","23,500 MMK"],["355","28,300 MMK"],["429","35,300 MMK"],["513","40,900 MMK"],["639","51,800 MMK"],["716","58,300 MMK"],["870","69,300 MMK"],["1084","83,800 MMK"],["1159","90,300 MMK"],["1446","110,300 MMK"],["1586","125,300 MMK"],["1875","140,300 MMK"],["2162","170,300 MMK"],["2530","190,300 MMK"],["2976","217,800 MMK"],["3345","245,300 MMK"],["3846","280,300 MMK"],["4562","331,300 MMK"],["5138","375,300 MMK"],["6092","450,300 MMK"],["6668","475,300 MMK"],["7502","545,300 MMK"]]},{"cat":"games","name":"Robux · All Region","icon":"🟩","prices":[["40 Robux","3,000 MMK"],["80 Robux","5,800 MMK"],["400 Robux","25,300 MMK"],["800 Robux","49,300 MMK"],["1700 Robux","97,800 MMK"],["4500 Robux","245,300 MMK"],["10000 Robux","495,300 MMK"],["22500 Robux","950,300 MMK"]]},{"cat":"games","name":"Roblox $ Account","icon":"🟢","prices":[["500","2,850 MMK"],["1000","51,300 MMK"],["2000","101,800 MMK"],["5250","250,300 MMK"],["11000","495,300 MMK"],["24000","990,300 MMK"]]},{"cat":"games","name":"Roblox Premium","icon":"👑","prices":[["Roblox Plus 1M","26,800 MMK"],["1M + 500","46,800 MMK"],["1M + 1000","67,300 MMK"],["1M + 2000","106,300 MMK"]]},{"cat":"apps","name":"Express VPN","icon":"expressvpn","prices":[["1 Month · 1 Device","2,000 MMK"],["1 Month · 12 Devices","12,000 MMK"]]},{"cat":"apps","name":"HMA","icon":"hmapro","prices":[["1 Month · 1 Device","3,800 MMK"]]},{"cat":"apps","name":"Outline Unlimited GB","icon":"outline","prices":[["1 Month · 1 Device","3,300 MMK"]]},{"cat":"apps","name":"Hiddify / V2Ray","icon":"hiddify","prices":[["1 Month · 50 GB","4,500 MMK"],["1 Month · 100 GB","5,900 MMK"],["1 Month · 150 GB","7,300 MMK"],["1 Month · 200 GB","8,800 MMK"]]},{"cat":"apps","name":"Jump Jump VPN","icon":"⚡","prices":[["1 Month · 1 Device · Share","10,300 MMK"],["1 Month · 1 Device · Own","14,800 MMK"],["1 Month · 2 Devices","19,300 MMK"],["6 Month · 2 Devices","95,300 MMK"],["12 Month · 2 Devices","123,300 MMK"]]},{"cat":"apps","name":"Telegram Premium","icon":"telegram","prices":[["1 Month · Login","20,800 MMK"],["SMS Fee","9,500 MMK"],["Gift Plan · 3 Month","55,300 MMK"],["Gift Plan · 6 Month","73,300 MMK"],["Gift Plan · 1 Year","190,300 MMK"]]},{"cat":"apps","name":"Telegram Stars","icon":"telegram","prices":[["50 Stars","4,000 MMK"],["100 Stars","7,900 MMK"],["150 Stars","11,700 MMK"],["200 Stars","15,500 MMK"],["300 Stars","23,000 MMK"],["500 Stars","38,300 MMK"],["1000 Stars","76,300 MMK"],["2000 Stars","152,300 MMK"]]},{"cat":"apps","name":"Alight Motion Premium","icon":"alightmotion","prices":[["Share Acc","1,800 MMK"],["Private Acc","2,300 MMK"]]},{"cat":"apps","name":"CapCut Pro","icon":"capcut","prices":[["1 Month · Share Acc","5,300 MMK"],["1 Month · Private Acc","8,300 MMK"],["6 Month · Share Acc","24,300 MMK"],["6 Month · Private Acc","48,300 MMK"]]},{"cat":"apps","name":"TikTok Coin","icon":"tiktok","prices":[["100 Coins","5,900 MMK"],["200 Coins","11,800 MMK"],["300 Coins","17,300 MMK"],["400 Coins","22,900 MMK"],["500 Coins","27,800 MMK"],["1000 Coins","53,300 MMK"],["2000 Coins","103,300 MMK"],["3000 Coins","153,300 MMK"],["5000 Coins","260,300 MMK"],["10000 Coins","500,300 MMK"]]},{"cat":"apps","name":"Wink Pro","icon":"▶","prices":[["VIP 1 Month · Share Acc","6,300 MMK"],["VIP 1 Month · Private Acc","16,300 MMK"],["VIP 1 Year · Share Acc","35,300 MMK"],["VIP 1 Year · Private Acc","120,300 MMK"]]},{"cat":"apps","name":"Meitu VIP","icon":"M","prices":[["1 Month · Private Acc","14,300 MMK"],["1 Year · Private Acc","110,300 MMK"]]},{"cat":"apps","name":"SuperVIP","icon":"♛","prices":[["3 Month · Private Acc","55,300 MMK"],["1 Year · Private Acc","16,800 MMK"]]},{"cat":"apps","name":"Picsart Pro","icon":"P","prices":[["1 Month · Share Acc","5,300 MMK"],["1 Month · Private Acc","9,800 MMK"]]},{"cat":"apps","name":"Canva Pro","icon":"C","prices":[["Lifetime","2,300 MMK"],["1 Year · Own Mail Invite","35,300 MMK"]]},{"cat":"apps","name":"YouTube Premium","icon":"▶","prices":[["1 Month","9,300 MMK"]]},{"cat":"apps","name":"Netflix Premium","icon":"N","prices":[["1 Month · Share","8,300 MMK"],["1 Month · Own","14,300 MMK"],["2 Months · Share","15,800 MMK"],["2 Months · Own","27,800 MMK"],["6 Months · Share","45,300 MMK"],["6 Months · Own","80,300 MMK"]]},{"cat":"apps","name":"Discord Nitro","icon":"♜","prices":[["Basic · 1 Month","17,800 MMK"],["Basic · 1 Year","142,300 MMK"],["Nitro · 1 Month","51,300 MMK"],["Nitro · 1 Year","460,300 MMK"]]},{"cat":"apps","name":"Microsoft Office 365 Family","icon":"▦","prices":[["1 Month · Mail Invite","6,300 MMK"],["1 Year · Ready Made Acc","37,300 MMK"]]},{"cat":"apps","name":"Duolingo","icon":"🦉","prices":[["Super 1 Year · Current Account","10,300 MMK"],["Super 1 Year · New Account","5,300 MMK"]]},{"cat":"music","name":"Spotify Premium","icon":"spotify","prices":[["Individual · 1 Month","8,800 MMK"],["Individual · 3 Months","32,800 MMK"],["Individual · 6 Months","52,300 MMK"],["Individual · 1 Year","75,300 MMK"],["Family · 2 Months","12,300 MMK"],["Family · 3 Months","16,300 MMK"],["Family · 6 Months","29,300 MMK"],["Family · 1 Year","50,300 MMK"]]},{"cat":"music","name":"Apple Music","icon":"applemusic","prices":[["1 Month · Family Invite","5,300 MMK"]]},{"cat":"ai","name":"ChatGPT","icon":"✦","prices":[["Plus · 1 Month · Share Acc","16,300 MMK"],["Plus · 1 Month · Private Acc","85,300 MMK"],["Go · 1 Month · Private Acc","30,300 MMK"]]},{"cat":"ai","name":"Gemini Pro","icon":"✧","prices":[["1 Month","6,300 MMK"],["3 Months","12,300 MMK"]]},{"cat":"ai","name":"Super Grok","icon":"G","prices":[["1 Month","120,300 MMK"],["3 Months","255,300 MMK"]]},{"cat":"ai","name":"King","icon":"♛","prices":[["1 Month · Private","42,300 MMK"]]},{"cat":"ai","name":"Claude","icon":"C","prices":[["1 Month · Private","105,300 MMK"]]}];
+const products=[
+ {cat:"apps",name:"Express VPN",icon:"🛡️",prices:[["1 Month · 1 Device","2,000 MMK"],["1 Month · 12 Devices","12,000 MMK"]]},
+ {cat:"apps",name:"HMA",icon:"🛡️",prices:[["1 Month · 1 Device","3,800 MMK"]]},
+ {cat:"apps",name:"Outline Unlimited GB",icon:"◉",prices:[["1 Month · 1 Device","3,300 MMK"]]},
+ {cat:"apps",name:"Hiddify / V2Ray",icon:"◌",prices:[["1 Month · 50 GB","4,500 MMK"],["1 Month · 100 GB","5,900 MMK"],["1 Month · 150 GB","7,300 MMK"],["1 Month · 200 GB","8,800 MMK"]]},
+ {cat:"apps",name:"Jump Jump VPN",icon:"⚡",prices:[["1 Month · 1 Device · Share","10,300 MMK"],["1 Month · 1 Device · Own","14,800 MMK"],["1 Month · 2 Devices","19,300 MMK"],["6 Month · 2 Devices","95,300 MMK"],["12 Month · 2 Devices","123,300 MMK"]]},
+ {cat:"apps",name:"Telegram Premium",icon:"✈️",prices:[["1 Month · Login","20,800 MMK"],["SMS Fee","9,500 MMK"],["Gift Plan · 3 Month","55,300 MMK"],["Gift Plan · 6 Month","73,300 MMK"],["Gift Plan · 1 Year","190,300 MMK"]]},
+ {cat:"apps",name:"Telegram Stars",icon:"★",prices:[["50 Stars","4,000 MMK"],["100 Stars","7,900 MMK"],["150 Stars","11,700 MMK"],["200 Stars","15,500 MMK"],["300 Stars","23,000 MMK"],["500 Stars","38,300 MMK"],["1000 Stars","76,300 MMK"],["2000 Stars","152,300 MMK"]]},
+ {cat:"apps",name:"Alight Motion Premium",icon:"◈",prices:[["Share Account","1,800 MMK"],["Private Account","2,300 MMK"]]},
+ {cat:"apps",name:"CapCut Pro",icon:"✂️",prices:[["1 Month · Share Account","5,300 MMK"],["1 Month · Private Account","8,300 MMK"],["6 Month · Share Account","24,300 MMK"],["6 Month · Private Account","48,300 MMK"]]},
+ {cat:"apps",name:"TikTok Coin",icon:"♪",prices:[["100 Coins","5,900 MMK"],["200 Coins","11,800 MMK"],["300 Coins","17,300 MMK"],["400 Coins","22,900 MMK"],["500 Coins","27,800 MMK"],["1000 Coins","53,300 MMK"],["2000 Coins","103,300 MMK"],["3000 Coins","153,300 MMK"],["5000 Coins","260,300 MMK"],["10000 Coins","500,300 MMK"]]},
+ {cat:"apps",name:"Wink Pro",icon:"✦",prices:[["VIP 1 Month · Share Account","6,300 MMK"],["VIP 1 Month · Private Account","16,300 MMK"],["VIP 1 Year · Share Account","35,300 MMK"],["VIP 1 Year · Private Account","120,300 MMK"]]},
+ {cat:"apps",name:"Meitu VIP",icon:"✿",prices:[["1 Month · Private Account","14,300 MMK"],["1 Year · Private Account","110,300 MMK"]]},
+ {cat:"apps",name:"SuperVIP",icon:"♛",prices:[["3 Month · Private Account","55,300 MMK"],["1 Year · Private Account","16,800 MMK"]]},
+ {cat:"apps",name:"Picsart Pro",icon:"✎",prices:[["1 Month · Share Account","5,300 MMK"],["1 Month · Private Account","9,800 MMK"]]},
+ {cat:"apps",name:"Canva Pro",icon:"C",prices:[["Lifetime","2,300 MMK"],["1 Year · Own Mail Invite","35,300 MMK"]]},
+ {cat:"apps",name:"YouTube Premium",icon:"▶",prices:[["1 Month","9,300 MMK"]]},
+ {cat:"apps",name:"Netflix Premium",icon:"N",prices:[["1 Month · Share","8,300 MMK"],["1 Month · Own","14,300 MMK"],["2 Months · Share","15,800 MMK"],["2 Months · Own","27,800 MMK"],["6 Months · Share","45,300 MMK"],["6 Months · Own","80,300 MMK"]]},
+ {cat:"apps",name:"Discord Nitro",icon:"◒",prices:[["Basic · 1 Month","17,800 MMK"],["Basic · 1 Year","142,300 MMK"],["Nitro · 1 Month","51,300 MMK"],["Nitro · 1 Year","460,300 MMK"]]},
+ {cat:"apps",name:"Microsoft Office 365 Family",icon:"▦",prices:[["1 Month · Mail Invite","6,300 MMK"],["1 Year · Ready Made Acc","37,300 MMK"]]},
+ {cat:"apps",name:"Duolingo",icon:"D",prices:[["Super 1 Year · Current Account","10,300 MMK"],["Super 1 Year · New Account","5,300 MMK"]]},
+ {cat:"games",name:"UC",icon:"◆",prices:[["60 UC","4,300 MMK"],["325 UC","19,900 MMK"],["660 UC","39,300 MMK"],["1800 UC","93,300 MMK"],["3850 UC","185,800 MMK"],["8100 UC","369,300 MMK"],["Error ID · 60 UC","4,500 MMK"],["Error ID · 325 UC","20,300 MMK"],["Error ID · 660 UC","40,300 MMK"],["Error ID · 1800 UC","100,300 MMK"],["Error ID · 3850 UC","200,300 MMK"],["Error ID · 8100 UC","390,500 MMK"]]},
+ {cat:"games",name:"Diamond · 2X",icon:"◆",prices:[["50 2x","3,900 MMK"],["1500 2x","11,000 MMK"],["250 2x","17,500 MMK"],["500 2x","35,500 MMK"],["2x 4 Packages","66,900 MMK"],["Weekly Pass","6,900 MMK"],["3 Weekly Pass · 2x recharge","20,700 MMK"],["Twilight Pass","37,000 MMK"]]},
+ {cat:"games",name:"Weekly / Monthly Bundle",icon:"◆",prices:[["Weekly Bundle","3,800 MMK"],["Monthly Bundle","18,200 MMK"]]},
+ {cat:"games",name:"Diamond · Normal",icon:"◆",prices:[["14","1,450 MMK"],["28","2,800 MMK"],["42","3,800 MMK"],["86","5,800 MMK"],["172","11,400 MMK"],["257","16,300 MMK"],["343","21,900 MMK"],["429","27,500 MMK"],["514","32,600 MMK"],["600","38,100 MMK"],["706","43,950 MMK"],["878","55,300 MMK"],["963","60,300 MMK"],["1049","65,800 MMK"],["1135","71,400 MMK"],["1412","87,900 MMK"],["2195","132,900 MMK"],["3688","221,600 MMK"],["5532","334,650 MMK"],["9288","55,600 MMK"]]},
+ {cat:"games",name:"Ban Server Diamond",icon:"◆",prices:[["WP","9,900 MMK"],["14","1,600 MMK"],["28","2,900 MMK"],["42","4,000 MMK"],["70","5,900 MMK"],["84","7,800 MMK"],["140","11,800 MMK"],["182","15,300 MMK"],["210","17,300 MMK"],["284","23,500 MMK"],["355","28,300 MMK"],["429","35,300 MMK"],["513","40,900 MMK"],["639","51,800 MMK"],["716","58,300 MMK"],["870","69,300 MMK"],["1084","83,800 MMK"],["1159","90,300 MMK"],["1446","110,300 MMK"],["1586","125,300 MMK"],["1875","140,300 MMK"],["2162","170,300 MMK"],["2530","190,300 MMK"],["2976","217,800 MMK"],["3345","245,300 MMK"],["3846","280,300 MMK"],["4562","331,300 MMK"],["5138","375,300 MMK"],["6092","450,300 MMK"],["6668","475,300 MMK"],["7502","545,300 MMK"]]},
+ {cat:"games",name:"Robux · All Region",icon:"R",prices:[["40","3,000 MMK"],["80","5,800 MMK"],["400","25,300 MMK"],["800","49,300 MMK"],["1700","97,800 MMK"],["4500","245,300 MMK"],["10000","495,300 MMK"],["22500","950,300 MMK"]]},
+ {cat:"games",name:"Roblox $ Account",icon:"R",prices:[["500","2,850 MMK"],["1000","51,300 MMK"],["2000","101,800 MMK"],["5250","250,300 MMK"],["11000","495,300 MMK"],["24000","990,300 MMK"]]},
+ {cat:"games",name:"Roblox Premium",icon:"R",prices:[["Roblox Plus 1M","26,800 MMK"],["1M + 500","46,800 MMK"],["1M + 1000","67,300 MMK"],["1M + 2000","106,300 MMK"]]},
+ {cat:"music",name:"Spotify Premium",icon:"♫",prices:[["Individual · 1M","8,800 MMK"],["Individual · 3M","32,800 MMK"],["Individual · 6M","52,300 MMK"],["Individual · 1Y","75,300 MMK"],["Family · 2M","12,300 MMK"],["Family · 3M","16,300 MMK"],["Family · 6M","29,300 MMK"],["Family · 1Y","50,300 MMK"]]},
+ {cat:"music",name:"Apple Music",icon:"♫",prices:[["1 Month · Family Invite","5,300 MMK"]]},
+ {cat:"ai",name:"ChatGPT",icon:"✦",prices:[["Plus · 1 Month · Share Acc","16,300 MMK"],["Plus · 1 Month · Private Acc","85,300 MMK"],["Go · 1 Month · Private Acc","30,300 MMK"]]},
+ {cat:"ai",name:"Gemini Pro",icon:"✦",prices:[["1 Month","6,300 MMK"],["3 Months","12,300 MMK"]]},
+ {cat:"ai",name:"Super Grok",icon:"✦",prices:[["1 Month","120,300 MMK"],["3 Months","255,300 MMK"]]},
+ {cat:"ai",name:"King",icon:"✦",prices:[["1 Month · Private","42,300 MMK"]]},
+ {cat:"ai",name:"Claude",icon:"✦",prices:[["1 Month · Private","105,300 MMK"]]}
+];
 
 let category="apps", current=null, selected=null;
-function setCat(cat){category=cat;["appBtn","gameBtn","musicBtn","aiBtn"].forEach(id=>document.getElementById(id).classList.toggle("active",document.getElementById(id).getAttribute("onclick").includes("'"+cat+"'")));render()}
+function setCat(cat){
+ category=cat;
+ ["appBtn","gameBtn","musicBtn","aiBtn"].forEach(id=>document.getElementById(id).classList.remove("active"));
+ const map={apps:"appBtn",games:"gameBtn",music:"musicBtn",ai:"aiBtn"};
+ document.getElementById(map[cat]).classList.add("active");
+ render();
+}
 function render(){
  const q=document.getElementById("search").value.toLowerCase().trim();
  const box=document.getElementById("products");box.innerHTML="";
- products.filter(p=>p.cat===category && p.name.toLowerCase().includes(q)).forEach((p,i)=>{
+ products.filter(p=>p.cat===category && p.name.toLowerCase().includes(q)).forEach(p=>{
    const c=document.createElement("div");c.className="card";
-   const isEmoji=!/^[a-z0-9.-]+$/i.test(p.icon);
-   c.innerHTML=isEmoji?`<div class="icon fallback">${p.icon}</div><h3>${p.name}</h3><p>${p.prices.length} packages available</p><span class="pill">View prices →</span>`:`<img class="icon" src="${icon(p.icon)}" onerror="this.outerHTML='<div class="icon fallback">${p.cat==='apps'?'✦':p.cat==='games'?'◆':p.cat==='music'?'♫':'✦'}</div>'"><h3>${p.name}</h3><p>${p.prices.length} packages available</p><span class="pill">View prices →</span>`;
-   c.onclick=()=>openModal(p);box.appendChild(c)
+   const iconBox=document.createElement("div");iconBox.className="icon fallback";iconBox.textContent=p.icon;
+   c.appendChild(iconBox);
+   const h=document.createElement("h3");h.textContent=p.name;c.appendChild(h);
+   const desc=document.createElement("p");desc.textContent=`${p.prices.length} packages available`;c.appendChild(desc);
+   const pill=document.createElement("span");pill.className="pill";pill.textContent="View prices →";c.appendChild(pill);
+   c.addEventListener("click",()=>openModal(p));
+   box.appendChild(c);
  });
 }
-function openModal(p){current=p;selected=null;document.getElementById("modalTitle").textContent=p.name;document.getElementById("prices").innerHTML=p.prices.map((x,i)=>`<label class="priceitem"><span class="pname"><input type="radio" name="pkg" value="${i}" onchange="selected=${i}"> ${x[0]}</span><span class="cost">${x[1]}</span></label>`).join("");document.getElementById("modal").classList.add("show")}
+function openModal(p){
+ current=p;selected=null;
+ document.getElementById("modalTitle").textContent=p.name;
+ const prices=document.getElementById("prices");prices.innerHTML="";
+ p.prices.forEach((x,i)=>{
+   const label=document.createElement("label");label.className="priceitem";
+   const left=document.createElement("span");left.className="pname";
+   const radio=document.createElement("input");radio.type="radio";radio.name="pkg";radio.value=i;
+   radio.addEventListener("change",()=>selected=i);
+   left.appendChild(radio);left.appendChild(document.createTextNode(" "+x[0]));
+   const cost=document.createElement("span");cost.className="cost";cost.textContent=x[1];
+   label.appendChild(left);label.appendChild(cost);prices.appendChild(label);
+ });
+ document.getElementById("modal").classList.add("show");
+}
 function closeModal(){document.getElementById("modal").classList.remove("show")}
 function sendOrder(){
  if(selected===null){alert("Please select a package first.");return}
  const p=current.prices[selected];
- const msg=`Hello Luca, I want to order:%0A%0AProduct: ${current.name}%0APackage: ${p[0]}%0APrice: ${p[1]}%0A%0AFrom Luca Digital Store`;
- window.open(`https://t.me/${TG}?text=${msg}`,"_blank")
+ const msg=`Hello Luca, I want to order:%0A%0AProduct: ${encodeURIComponent(current.name)}%0APackage: ${encodeURIComponent(p[0])}%0APrice: ${encodeURIComponent(p[1])}%0A%0AFrom Luca Digital Store`;
+ window.open(`https://t.me/${TG}?text=${msg}`,"_blank");
 }
 render();
 </script>
